@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   background-color: #f5f6fa;
@@ -20,11 +21,13 @@ header .container {
 }
 header .menu {
   display: flex;
+}
+header .menu li {
   list-style: none;
   font-weight: bold;
   margin-left: 24px;
 }
-header .menu a {
+header .menu li a {
   color: #fff;
   text-decoration: none;
 }
@@ -32,9 +35,6 @@ section .container {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
-  list-style: none;
-  font-weight: bold;
-  margin-left: 24px;
 }
 @media (max-width: 1023px) {
   section .container {
@@ -51,9 +51,24 @@ section .container .products {
 }
 @media (max-width: 1023px) {
   section .container .products {
-    grid-template-columns: repeat(2, 48, 5%);
+    grid-template-columns: repeat(2, 48.5%);
     column-gap: 3%;
   }
+}
+@media (max-width: 767px) {
+  section .container .products {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  section .container .products-item {
+    margin-bottom: 16px;
+  }
+}
+section .container .products li {
+  list-style: none;
+  font-weight: bold;
+  margin-left: 24px;
 }
 section .container .products img {
   width: 100%;

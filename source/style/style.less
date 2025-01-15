@@ -1,19 +1,18 @@
 @import 'map.less';
+@import 'var.less';
+
+// Escaping
 @breakPointTablet:~"(max-width: 1023px)";
 @breakPointMobile:~"(max-width: 767px)";
-
-.list(){
-    list-style: none;
-    font-weight: bold;
-    margin-left: 24px;
-}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // Variable
+    font-family: @font;
 }
-
+// MAP
 body{
     background-color: #colors[primary];
 }
@@ -33,24 +32,32 @@ header{
 
     .menu{
         display: flex;
-        .list();
-        a{
-            color: #fff;
-            text-decoration: none;
+        li{
+            list-style: none;
+            font-weight: bold;
+            margin-left: 24px;
+
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
         }
+        
     }
 }
 
 section{
+
     .container{
         max-width: 1024px;
         width: 100%;
         margin: 0 auto;
 
         @media @breakPointTablet{
-            max-width: 80%
+            max-width: 80%;
         }
-        .list();
+
+       
         .products{
             margin-top: 40px;
             display: grid;
@@ -60,9 +67,24 @@ section{
             width: 100%;
 
             @media @breakPointTablet{
-                grid-template-columns: repeat(2, 48,5%);
+                grid-template-columns: repeat(2, 48.5%);
                 column-gap: 3%;
-    
+            }
+
+            @media @breakPointMobile{
+                display: block;
+            }
+
+            &-item{
+                @media @breakPointMobile{
+                    margin-bottom: 16px;
+                }
+            }
+            
+            li{
+                list-style: none;
+                font-weight: bold;
+                margin-left: 24px;
             }
 
             img{
